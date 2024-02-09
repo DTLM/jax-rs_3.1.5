@@ -1,6 +1,5 @@
 package main.controller;
 
-import jakarta.ws.rs.ApplicationPath;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
@@ -10,7 +9,7 @@ import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.Response.Status;
 import main.model.Usuario;
 
-@ApplicationPath("usuario/")
+@Path("usuario/")
 public class UsuarioController {
 
 	@POST
