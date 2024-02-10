@@ -1,3 +1,4 @@
 main\controller\UsuarioController.class
 main\Main.class
 main\model\Usuario.class
+main\config\RestConfig.class

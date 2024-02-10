@@ -1,6 +1,7 @@
 package main.controller;
 
 import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
@@ -20,4 +21,9 @@ public class UsuarioController {
 		System.out.println("Criado usuario: " + usu.getNome());
 		return Response.status(Status.CREATED).entity(usu).build();
 	}
+	
+	@GET
+    public Response getMensagem() {
+        return Response.ok("Olá, mundo!").build();
+    }
 }
