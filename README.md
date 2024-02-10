@@ -14,4 +14,5 @@
     <li>Rodar a imagem no docker: <code>docker run {porta}(exemplo: 8080:8080) {nome da imagem} </code></li>
   </ol>
   <p>Após finalizado, só rodar em uma aplicação de teste de Api.</p>
+  <p>Obs: projeto todo configurado, mas ainda apresenta erro de configuração. Parado temporarimente, retorno posterior.</p>
 </div>
