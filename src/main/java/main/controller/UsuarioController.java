@@ -23,7 +23,11 @@ public class UsuarioController {
 	}
 	
 	@GET
+	@Path("ola")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
     public Response getMensagem() {
-        return Response.ok("Olá, mundo!").build();
+		System.out.println("ola mundo");
+        return Response.ok("Ola, mundo!").build();
     }
 }

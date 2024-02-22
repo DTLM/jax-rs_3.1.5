@@ -8,6 +8,8 @@
 	<packaging>war</packaging>
 	<properties>
 		<jersey.version>3.1.5</jersey.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<war.mvn.plugin.version>3.4.0</war.mvn.plugin.version>
 	</properties>
 	<dependencies>
 		<!-- Jersey dependencies -->
@@ -19,6 +21,19 @@
 		<dependency>
 			<groupId>org.glassfish.jersey.containers</groupId>
 			<artifactId>jersey-container-servlet</artifactId>
+			<version>${jersey.version}</version>
+		</dependency>
+		<!-- Required only when you are using JAX-RS Client -->
+		<dependency>
+			<groupId>org.glassfish.jersey.core</groupId>
+			<artifactId>jersey-client</artifactId>
+			<version>${jersey.version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.glassfish.jersey.core/jersey-common -->
+		<dependency>
+			<groupId>org.glassfish.jersey.core</groupId>
+			<artifactId>jersey-common</artifactId>
 			<version>${jersey.version}</version>
 		</dependency>
 		<dependency>
@@ -37,42 +52,37 @@
 			<version>${jersey.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.glassfish.jersey.media</groupId>
-			<artifactId>jersey-media-json-jackson</artifactId>
-			<version>${jersey.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.glassfish.jersey.media</groupId>
-			<artifactId>jersey-media-multipart</artifactId>
-			<version>${jersey.version}</version>
-		</dependency>
-		<dependency>
 			<groupId>org.glassfish.jersey.connectors</groupId>
 			<artifactId>jersey-apache-connector</artifactId>
 			<version>${jersey.version}</version>
 		</dependency>
-		<!-- Jakarta EE API -->
 		<dependency>
-			<groupId>jakarta.platform</groupId>
-			<artifactId>jakarta.jakartaee-api</artifactId>
-			<version>9.0.0</version>
+			<groupId>org.glassfish.jersey.containers</groupId>
+			<artifactId>jersey-container-jdk-http</artifactId>
+			<version>${jersey.version}</version>
 		</dependency>
+		<!-- Jakarta EE API -->
+		<!--		<dependency>-->
+		<!--			<groupId>jakarta.platform</groupId>-->
+		<!--			<artifactId>jakarta.jakartaee-api</artifactId>-->
+		<!--			<version>9.0.0</version>-->
+		<!--		</dependency>-->
 	</dependencies>
 	<build>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.1</version>
+				<inherited>true</inherited>
 				<configuration>
+					<source>17</source>
+					<target>17</target>
 					<release>17</release>
 				</configuration>
 			</plugin>
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
-				<version>3.2.3</version>
-				<configuration>
-					<failOnMissingWebXml>false</failOnMissingWebXml>
-				</configuration>
+				<version>3.4.0</version>
 			</plugin>
 		</plugins>
 	</build>
